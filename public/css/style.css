@@ -7,6 +7,7 @@
 }
 
 body{
+    background-color: rgb(242, 227, 255);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,7 +17,8 @@ body{
     overflow: hidden;
 }
 
-.form-login{
+.form-login, .form-cadastro{
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 10px 2px rgb(211, 211, 211);
     position: relative;
     display: flex;
@@ -25,12 +27,12 @@ body{
     align-items: center;
     height: 400px;
     width: 340px;
-    border: 3px solid rebeccapurple;
+    border: 2px solid rebeccapurple;
     border-radius: 5%;
     padding: 20px;
 }
 
-.form-login form{
+.form-login form, .form-cadastro form{
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -38,7 +40,7 @@ body{
     gap: 1rem;
 }
 
-.form-login form input{
+.form-login form input, .form-cadastro form input, select, option{
     height: 40px;
     border-radius: 10px;
     background-color: aliceblue;
@@ -52,6 +54,7 @@ body{
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
+    border-bottom: 3px solid black;
 }
 
 .svgwave1{
@@ -63,8 +66,32 @@ body{
 .botao-submit{
     background-color: rgb(143, 84, 202) !important;
     cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    transition: 0.2s ease;
+    font-weight: 500;
 }
 
 .botao-submit:hover{
     background-color: rebeccapurple !important;
+}
+
+.form-cadastro{
+    height: 550px !important;
+}
+
+.cadastro-text{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 3px solid black;
+
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.2rem !important;
+    color: rebeccapurple;
+    font-weight: 500;
 }

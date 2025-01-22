@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <title>Cadastro</title>
+</head>
+<body>
+    <svg class="svgwave1" width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="100%" y1="51%" x2="0%" y2="49%"><stop offset="5%" stop-color="#ff6900"></stop><stop offset="95%" stop-color="#9900ef"></stop></linearGradient></defs><path d="M 0,400 L 0,60 C 63.21951219512195,75.8110614908966 126.4390243902439,91.6221229817932 190,88 C 253.5609756097561,84.3778770182068 317.4634146341463,61.3225695637238 384,56 C 450.5365853658537,50.6774304362762 519.7073170731708,63.087598763311576 592,67 C 664.2926829268292,70.91240123668842 739.7073170731707,66.32703538302988 823,54 C 906.2926829268293,41.67296461697011 997.4634146341466,21.604259704568875 1066,31 C 1134.5365853658534,40.395740295431125 1180.439024390244,79.2559257986946 1239,89 C 1297.560975609756,98.7440742013054 1368.780487804878,79.3720371006527 1440,60 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.265" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="100%" y1="51%" x2="0%" y2="49%"><stop offset="5%" stop-color="#ff6900"></stop><stop offset="95%" stop-color="#9900ef"></stop></linearGradient></defs><path d="M 0,400 L 0,140 C 78.99896942631398,138.5228443833734 157.99793885262795,137.04568876674682 229,140 C 300.00206114737205,142.95431123325318 363.0072140158021,150.34008931638613 428,153 C 492.9927859841979,155.65991068361387 559.9732050841634,153.5939539677087 636,149 C 712.0267949158366,144.4060460322913 797.099965647544,137.2840948127791 861,133 C 924.900034352456,128.7159051872209 967.6269323256613,127.26966678117489 1023,129 C 1078.3730676743387,130.7303332188251 1146.392305049811,135.63723806252145 1218,138 C 1289.607694950189,140.36276193747855 1364.8038474750945,140.1813809687393 1440,140 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.4" class="transition-all duration-300 ease-in-out delay-150 path-1"></path><defs><linearGradient id="gradient" x1="100%" y1="51%" x2="0%" y2="49%"><stop offset="5%" stop-color="#ff6900"></stop><stop offset="95%" stop-color="#9900ef"></stop></linearGradient></defs><path d="M 0,400 L 0,220 C 54.76812092064583,223.58158708347648 109.53624184129166,227.16317416695296 187,227 C 264.46375815870834,226.83682583304704 364.6231535554791,222.9288904156647 445,215 C 525.3768464445209,207.0711095843353 585.9711439367916,195.1212641703882 650,194 C 714.0288560632084,192.8787358296118 781.4922706973549,202.58605290278254 836,204 C 890.5077293026451,205.41394709721746 932.059773273789,198.53452421848166 999,206 C 1065.940226726211,213.46547578151834 1158.2686362074887,235.27585022329097 1236,240 C 1313.7313637925113,244.72414977670903 1376.8656818962556,232.36207488835453 1440,220 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-2"></path><defs><linearGradient id="gradient" x1="100%" y1="51%" x2="0%" y2="49%"><stop offset="5%" stop-color="#ff6900"></stop><stop offset="95%" stop-color="#9900ef"></stop></linearGradient></defs><path d="M 0,400 L 0,300 C 64.55376159395396,286.6472002748196 129.10752318790793,273.2944005496393 201,271 C 272.89247681209207,268.7055994503607 352.1236688423222,277.4695980762624 417,287 C 481.8763311576778,296.5304019237376 532.3978014428031,306.827207145311 601,304 C 669.6021985571969,301.172792854689 756.285125386465,285.22157334249397 831,277 C 905.714874613535,268.77842665750603 968.4616970113364,268.28649948471315 1039,270 C 1109.5383029886636,271.71350051528685 1187.8680865681895,275.6324287186534 1256,281 C 1324.1319134318105,286.3675712813466 1382.0659567159053,293.1837856406733 1440,300 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-3"></path></svg>
+    <div class="form-cadastro">
+        <form action="../../controller/Cadastrar.php" method="POST">
+            <h1 class="cadastro-text">Cadastro</h1>
+            <input type="text" name="nome" id="nome" placeholder="Nome" required>
+            <input type="text" name="cpf" id="cpf" placeholder="Cpf" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <select id="tipo_usuario" name="tipo_usuario" required>
+                <option value="usuario">Usuário</option>
+                <option value="veterinario">Veterinário</option>
+                <option value="administrador">Administrador</option>
+              </select>
+            <input class="botao-submit" type="submit" name="cadastrar" value="Cadastrar">
+            <p>ja tem uma conta? <a href="logar.html" id="cadastro">logar</a></p>
+        </form>
+    </div>
+</body>
+</html>
