@@ -1,11 +1,17 @@
 <?php
 session_start();
 
+
 // verifica se o usuario não esta logado
 if (!isset($_SESSION['usuario_id']))
 {
     header("location: logar.html");
     exit();
+}
+
+if ($_SESSION['tipo_usuario'] == "usuario") // tirar isso depois e fazer só no input
+{
+    header("location: cadastro-animal.php");
 }
 
 $nome_array = explode(" ", $_SESSION['nome']);

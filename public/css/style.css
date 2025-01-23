@@ -17,7 +17,18 @@ body{
     overflow: hidden;
 }
 
+.form-login{
+    transform: translateY(50%);
+
+}
+
+.form-cadastro{
+    transform: translateY(25%);
+}
+
 .form-login, .form-cadastro{
+    opacity: 0;
+    transition: 1s ease;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px 2px rgb(211, 211, 211);
     position: relative;
@@ -58,8 +69,7 @@ body{
 }
 
 .svgwave1{
-    position: absolute;
-    bottom: 0;
+    position: fixed;
     transform: translateY(40%);
 }
 
@@ -94,4 +104,43 @@ a{
     font-size: 1.2rem !important;
     color: rebeccapurple;
     font-weight: 500;
+}
+
+.blob-background{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    z-index: -1;
+    user-select: none;
+}
+
+/* .blob-background img{
+    position: absolute;
+    width: 700px;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    object-fit: contain;
+} */
+
+.blob1{
+    animation: girar 5s linear infinite;
+    transform-origin: center center;
+}
+
+.blob2{
+    animation: girar 20s linear infinite reverse;
+    transform-origin: center center;
+    z-index: -2;
+}
+
+
+/* isso aqui é extramamente mal otimizado */
+@keyframes girar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }

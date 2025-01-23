@@ -10,6 +10,7 @@ class Database
 
     public function __construct(){
         $result = $this->conecta();
+        echo "foi";
     }
 
     public function conecta(){
@@ -46,13 +47,13 @@ class Database
     }
 
     public function login($cpf)
-        {
-            $this->query = "SELECT id, nome, cpf, email, senha, tipo_usuario FROM usuarios WHERE cpf = :cpf";
-            $this->logar = $this->conn->prepare($this->query);
-            $this->logar->bindParam(':cpf', $cpf);
-            $this->logar->execute();
-            return $this->usuario = $this->logar->fetch(PDO::FETCH_ASSOC);
-        }
+    {
+        $this->query = "SELECT id, nome, cpf, email, senha, tipo_usuario FROM usuarios WHERE cpf = :cpf";
+        $this->logar = $this->conn->prepare($this->query);
+        $this->logar->bindParam(':cpf', $cpf);
+        $this->logar->execute();
+        return $this->usuario = $this->logar->fetch(PDO::FETCH_ASSOC);
+    }
 
 
 }

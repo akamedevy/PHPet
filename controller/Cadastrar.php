@@ -16,9 +16,7 @@ class Cadastrar{
             $database = new Database();
             $database->insert($nome, $cpf, $email, $senha, $tipo_usuario);
 
-            echo "<script> alert('Usuário cadastrado'); </script>";
-
-            header('Location: ../public/html/cadastrar.html');
+            header('Location: ../public/html/logar.html');
             
             exit();
         }
