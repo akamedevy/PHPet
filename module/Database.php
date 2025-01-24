@@ -10,7 +10,6 @@ class Database
 
     public function __construct(){
         $result = $this->conecta();
-        echo "foi";
     }
 
     public function conecta(){

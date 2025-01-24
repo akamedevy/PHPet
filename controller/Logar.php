@@ -24,6 +24,13 @@ class Logar{
                 $_SESSION['senha'] = $usuario['senha'];
                 $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
 
+                if ($_SESSION['tipo_usuario'] == "usuario")
+                {
+                    header("location: ../public/html/cadastro-animal.php");
+                    exit();
+                }
+
+
                 header("location: ../public/html/home.php");
                 exit();
             }

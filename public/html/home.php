@@ -9,11 +9,6 @@ if (!isset($_SESSION['usuario_id']))
     exit();
 }
 
-if ($_SESSION['tipo_usuario'] == "usuario") // tirar isso depois e fazer só no input
-{
-    header("location: cadastro-animal.php");
-}
-
 $nome_array = explode(" ", $_SESSION['nome']);
 $nome = ucfirst($nome_array[0]);
 

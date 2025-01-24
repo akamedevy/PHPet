@@ -20,9 +20,21 @@ class AnimalDB extends Database{
         $this->cadastrar->bindParam(':id_dono', $id_dono);
         $this->cadastrar->execute();
 
-        if ($this->cadastrar->rowCount()){
-            echo 'cadastrado';
-        }
+        // if ($this->cadastrar->rowCount()){
+        //     echo 'cadastrado';
+        // }
+    }
+
+    public function verifyUser($id_dono)
+    {
+        $this->query = "SELECT EXISTS( SELECT 1 FROM animais WHERE animais.id_dono = :id_dono ) AS tem_animal";
+        $this->selecionar = $this->conn->prepare($this->query);
+        $this->selecionar->bindParam(':id_dono', $id_dono);
+        $this->selecionar->execute();
+
+        $resultado = $this->selecionar->fetch(PDO::FETCH_ASSOC);
+
+        return $resultado['tem_animal'];
     }
 }
 
