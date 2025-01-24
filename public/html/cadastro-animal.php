@@ -1,18 +1,22 @@
 <?php
 
 include "../../controller/CadastrarAnimal.php";
-include "../../controller/VerificarAnimal.php";
 session_start();
 
 if (!isset($_SESSION['usuario_id']))
 {
-    header("location: logar.html");
+    header("location: logar.html"); // rala
     exit();
 }
 
+$verificar = CadastrarAnimal::verificar($_SESSION['usuario_id']);
+if ($verificar == 1)
+{
+    header("location: homeUsuario.php"); // usuario ja cadastrou um animal
+}
 
 $nome_array = explode(" ", $_SESSION['nome']);
-$nome_usuario = ucfirst($nome_array[0]);
+$nome_usuario = ucfirst($nome_array[0]); // pega o primeiro nome do nome completo.
 
 if (isset($_POST['cadastrar'])){
     $nome = $_POST['nome'];
@@ -20,10 +24,12 @@ if (isset($_POST['cadastrar'])){
     $raca = $_POST['raca'];
     $idade = $_POST['idade'];
     $id_dono = $_SESSION['usuario_id'];
+    $_SESSION['nome_formatado'] = $nome_usuario;
 
     $cadastraranimal = new CadastrarAnimal($nome,$especie,$raca,$idade,$id_dono);
-    $verificar = new VerificarAnimal($id_dono);
-    var_dump($verificar);
+    $cadastraranimal->cadastrar();
+
+    header("location: homeUsuario.php");
 }
 
 ?>

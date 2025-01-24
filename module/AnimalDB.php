@@ -25,7 +25,7 @@ class AnimalDB extends Database{
         // }
     }
 
-    public function verifyUser($id_dono)
+    public function verifyUser($id_dono) // retorna 1 se o animal ja estiver associado ao o id de um usuario, retorna 0 se não.
     {
         $this->query = "SELECT EXISTS( SELECT 1 FROM animais WHERE animais.id_dono = :id_dono ) AS tem_animal";
         $this->selecionar = $this->conn->prepare($this->query);
@@ -38,4 +38,4 @@ class AnimalDB extends Database{
     }
 }
 
-$AnimalDB = new AnimalDB();
+// $AnimalDB = new AnimalDB();
