@@ -2,6 +2,12 @@
 session_start();
 
 var_dump($_SESSION);
+
+if (isset($_POST['enviar']))
+{
+    var_dump($_POST);
+}
+
 ?>
 
 
@@ -13,6 +19,9 @@ var_dump($_SESSION);
     <title>Document</title>
 </head>
 <body>
-    
+    <form method="POST">
+        <input type="date" name="data" id="">
+        <input type="submit" name="enviar">
+    </form>
 </body>
 </html>
