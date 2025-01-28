@@ -24,7 +24,6 @@ if (isset($_POST['cadastrar'])){
     $raca = $_POST['raca'];
     $idade = $_POST['idade'];
     $id_dono = $_SESSION['usuario_id'];
-    $_SESSION['nome_formatado'] = $nome_usuario;
 
     $cadastraranimal = new CadastrarAnimal($nome,$especie,$raca,$idade,$id_dono);
     $cadastraranimal->cadastrar();
@@ -47,7 +46,7 @@ if (isset($_POST['cadastrar'])){
     <img class="blob-background" src="../assets/img/blob-animal.png" alt="">
     <img class="blob-background2" src="../assets/img/blob-animal-2.png" alt="">
 
-    <h1>Olá, <span><?php echo($nome_usuario) . "!" ?></span></h1>
+    <h1>Olá, <span><?php echo($_SESSION['nome_formatado']) . "!" ?></span></h1>
     <p>Vamos começar cadastrando seu pet?</p>
     <form method="POST" class="form-animais">
         <input type="text" name="nome" placeholder="Nome:" required>

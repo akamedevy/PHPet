@@ -37,12 +37,29 @@ class Database
         }
     }
 
-    public function select()
+    public function select(string $table = null,string $where = null, string $order = null, string $limit = null, string $fields = '*'): array
     {
-        $this->query = "SELECT * FROM lista";
-        $this->selecionar = $this->conn->prepare($this->query);
-        $this->selecionar->execute();
-        return $this->selecionar->fetchAll(PDO::FETCH_ASSOC);
+        // Montando a query
+        $query = "SELECT $fields FROM {$table}";
+    
+        if ($where) {
+            $query .= " WHERE $where";
+        }
+    
+        if ($order) {
+            $query .= " ORDER BY $order";
+        }
+    
+        if ($limit) {
+            $query .= " LIMIT $limit";
+        }
+    
+        // Preparando e executando a query
+        echo($query);
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+    
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function login($cpf)

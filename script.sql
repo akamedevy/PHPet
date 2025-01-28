@@ -18,7 +18,7 @@ create table usuarios(
 create table animais(
 	id int not null auto_increment primary key,
 	nome varchar(100) not null,
-    especie varchar(50) not null,
+    especie varchar(50) not null	,
     raca varchar(50) not null,
     idade varchar(10) not null,
     id_dono int not null,
@@ -70,6 +70,7 @@ SELECT animais.nome AS animal_nome,
        usuarios.nome AS usuario_nome, 
        usuarios.cpf,
        usuarios.email 
+       usuarios.id,
 FROM animais
 JOIN usuarios ON animais.id_dono = usuarios.id;
 
