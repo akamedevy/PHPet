@@ -1,9 +1,10 @@
 <?php
 
 include "../../module/Database.php";
+include "../../controller/Consulta.php";
 session_start();
 
-var_dump($_SESSION);
+// var_dump($_SESSION);
 
 $db = new Database();
 $animais_dados = $db->select(
@@ -14,16 +15,30 @@ $animais_dados = $db->select(
     // fields:
 );
 
-var_dump($animais_dados);
-$dados = $animais_dados[0];
+$veterinarios_dados = $db->select(
+    table: "usuarios",
+    where: "tipo_usuario = 'veterinario'",
+    // order:
+    // limit:
+    // fields:
+);
 
-// $verificar = Database::select(
-//     table: "animais",
-//     where: "id = 5",
-//     // order: "name ASC",
-//     // limit: "10",
-//     // fields: "id, name, age"
-// );
+// var_dump($animais_dados);
+// var_dump($veterinarios_dados);
+$dados = $animais_dados;
+
+if(isset($_POST['cadastrar']))
+{
+    $data = $_POST['data'];
+    $horario = $_POST['horario'];
+    $motivo = $_POST['motivo_consulta'];
+    $tipo = $_POST['tipo-consulta'];
+    $id_animal = $_POST['id-animal'];
+    $id_usuario = $_SESSION['usuario_id'];
+    $id_veterinario = $_POST['id_veterinario'];
+
+    $cadastrar = Consulta::cadastrar_consulta($data,$horario,$motivo,$tipo,$id_animal,$id_usuario,$id_veterinario);
+}
 
 ?>
 
@@ -36,30 +51,27 @@ $dados = $animais_dados[0];
     <title>Agendar Consulta</title>
 </head>
 <body>
-    <form action="">
+    <form method="POST">
         <h1>informações do animal</h1>
 
         <label for="selecionar-animal">Animal: </label>
-        <select name="selecionar-animal" id="selecionar-animal">
-            <option value="id1"><?php echo($dados['nome']) ?></option>
-            <option value="id2">hagamenon</option>
+        <select name="id-animal" id="selecionar-animal" required>
+            <option value="">Selecione um animal</option>
+                <?php
+                foreach ($animais_dados as $animal) {
+                    echo '<option value="' . $animal['id'] . '">' . $animal['nome'] . '</option>';
+                }
+                ?>
         </select>
-
-        <input type="text" name="nome" placeholder="Nome:" required>
-        <input type="text" name="especie" placeholder="Especie:" required>
-        <input type="text" name="raca" placeholder="Raça:" required>
-        <input type="text" name="idade" placeholder="Idade:" required>
-
-        <input class="botao-submit" type="submit" name="cadastrar">
 
         <h1>informações da consulta</h1>
         <label for="data">Data:</label>
-        <input type="date" name="data" id="data">
+        <input type="date" name="data" id="data" required>
         <label for="horario">Horario:</label>
-        <input type="time" name="horario" id="horario">
+        <input type="time" name="horario" id="horario" required>
 
         <label for="motivo">Motivo da consulta:</label>
-        <input type="text" name="motivo_consulta" id="motivo">
+        <input type="text" name="motivo_consulta" id="motivo" required>
 
         <label for="tipo-consulta">Tipo da consulta: </label>
         <select name="tipo-consulta" id="tipo-consulta">
@@ -83,11 +95,15 @@ $dados = $animais_dados[0];
         </select>
 
         <label for="veterinario">Escolha o responsavel: </label>
-        <select id="veterinario" name="veterinario" required>
-            <option value="veterinario">Sawada</option>
-            <option value="veterinario">Kaoru</option>
-            <option value="veterinario">Marcos</option>
+        <select id="veterinario" name="id_veterinario" required>
+            <?php
+            foreach ($veterinarios_dados as $veterinario) {
+                echo '<option value="' . $veterinario['id'] . '">' . $veterinario['nome'] . '</option>';
+            }
+            ?>
           </select>
+
+          <input type="submit" name="cadastrar" value="cadastrar">
     </form>
 </body>
 </html>
