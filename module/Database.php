@@ -55,6 +55,7 @@ class Database
         }
     
         // Preparando e executando a query
+        // echo($query);
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
     

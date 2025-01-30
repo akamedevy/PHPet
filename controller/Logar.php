@@ -15,6 +15,7 @@ class Logar{
             $database = new Database();
             $usuario = $database->login($cpf);
 
+            // verifica se a senha que o usuario colocou no formulario corresponde a senha salva no banco de dados
             if ($usuario && $senha == $usuario["senha"])
             {
                 $_SESSION['usuario_id'] = $usuario['id'];
@@ -28,16 +29,18 @@ class Logar{
                 $nome_usuario = ucfirst($nome_array[0]); // pega o primeiro nome do nome completo.
 
                 $_SESSION['nome_formatado'] = $nome_usuario;
-
-                if ($_SESSION['tipo_usuario'] == "usuario")
+                
+                if ($_SESSION['tipo_usuario'] == "administrador")
                 {
+                    header("location: ../public/html/admUsuarios.php");
+                    exit();
+                }
+                else{
                     header("location: ../public/html/cadastro-animal.php");
                     exit();
                 }
 
 
-                header("location: ../public/html/home.php");
-                exit();
             }
             else
             {

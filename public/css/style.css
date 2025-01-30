@@ -124,12 +124,12 @@ a{
 } */
 
 .blob1{
-    animation: girar 15s linear infinite;
+    animation: girar 10s linear infinite;
     transform-origin: center center;
 }
 
 .blob2{
-    animation: girar 20s linear infinite reverse;
+    animation: girar 11s linear infinite reverse;
     transform-origin: center center;
     z-index: -2;
 }

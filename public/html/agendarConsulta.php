@@ -38,6 +38,8 @@ if(isset($_POST['cadastrar']))
     $id_veterinario = $_POST['id_veterinario'];
 
     $cadastrar = Consulta::cadastrar_consulta($data,$horario,$motivo,$tipo,$id_animal,$id_usuario,$id_veterinario);
+
+    echo '<script> alert("Consulta agendada com sucesso!!") </script>';
 }
 
 ?>
@@ -49,10 +51,20 @@ if(isset($_POST['cadastrar']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Consulta</title>
+    <link rel="stylesheet" href="../css/agendarConsulta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <form method="POST">
-        <h1>informações do animal</h1>
+
+    <img class="wave wave1" src="../assets/img/wave-consulta1.png" alt="">
+    <img class="wave wave2" src="../assets/img/wave-consulta2.png" alt="">
+
+    <div class="voltar">
+        <a class="seta-voltar" href="homeUsuario.php"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    </div>
+
+    <h1 class="agendar-text">Agendar Consulta</h1>
+    <form method="POST" class="form-consulta">
 
         <label for="selecionar-animal">Animal: </label>
         <select name="id-animal" id="selecionar-animal" required>
@@ -64,7 +76,6 @@ if(isset($_POST['cadastrar']))
                 ?>
         </select>
 
-        <h1>informações da consulta</h1>
         <label for="data">Data:</label>
         <input type="date" name="data" id="data" required>
         <label for="horario">Horario:</label>
@@ -94,7 +105,7 @@ if(isset($_POST['cadastrar']))
             <option value="eutanasia">Consulta para Eutanásia</option>
         </select>
 
-        <label for="veterinario">Escolha o responsavel: </label>
+        <label for="veterinario">Escolha o veterinario: </label>
         <select id="veterinario" name="id_veterinario" required>
             <?php
             foreach ($veterinarios_dados as $veterinario) {
@@ -103,7 +114,7 @@ if(isset($_POST['cadastrar']))
             ?>
           </select>
 
-          <input type="submit" name="cadastrar" value="cadastrar">
+          <input class="botao-submit" type="submit" name="cadastrar" value="cadastrar">
     </form>
 </body>
 </html>

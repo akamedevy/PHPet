@@ -92,5 +92,15 @@ p{
     height: 600px;
     width: 600px;
     transform: translate(30%, 40%);
+    animation: girar 5s ease infinite;
     z-index: -2;
+}
+
+@keyframes girar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }

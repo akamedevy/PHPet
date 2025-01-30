@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e8e0f3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23f4f0f9' fill-opacity='0.24' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    overflow: hidden;
+}
+
+.form-consulta{
+    background-color: white;
+    box-shadow: 0 0 5rem 1px rgb(150, 150, 150);
+    border-radius: 20px;
+    text-align: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    color: #393636;
+}
+
+.form-consulta label{
+    font-size: 1.1rem;
+}
+
+.form-consulta input, select{
+    transition: 0.25s ease;
+    border-radius: 20px;
+    background-color: rgb(222, 222, 222);
+    border: none;
+    width: 90%;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 350;
+    outline: none;
+}
+
+.form-consulta select option{
+    background-color: white;
+}
+
+.botao-submit{
+    cursor: pointer;
+    background-color: rgb(181, 131, 230) !important;
+    color: white;
+}
+
+.botao-submit:hover{
+    background-color: rgb(159, 107, 212) !important;
+}
+
+.form-consulta input:focus{
+    transform: scale(110%);
+}
+
+.voltar{
+    top: 1rem;
+    left: 1rem;
+    position: absolute;
+}
+
+.voltar i{
+    transition: 0.25s ease;
+    color: black;
+    font-size: 2.75rem;
+}
+
+.voltar i:hover{
+    transform: scale(101%);
+    color: rebeccapurple;
+    font-size: 3rem;
+}
+
+.wave{
+    position: absolute;
+    height: 450px;
+    z-index: -10;
+}
+.wave1{
+    transform: translateY(20%);
+    bottom: 0;
+    left: 0;
+}
+
+.wave2{
+    right: 0;
+    top: 0;
+    transform: translateY(-20%);
+}
+
+.agendar-text{
+    position: absolute;
+    top: 1rem;
+    border-bottom: 5px solid black;
+}
