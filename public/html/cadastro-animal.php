@@ -15,9 +15,6 @@ if ($verificar == 1)
     header("location: homeUsuario.php"); // usuario ja cadastrou um animal
 }
 
-$nome_array = explode(" ", $_SESSION['nome']);
-$nome_usuario = ucfirst($nome_array[0]); // pega o primeiro nome do nome completo.
-
 if (isset($_POST['cadastrar'])){
     $nome = $_POST['nome'];
     $especie = $_POST['especie'];

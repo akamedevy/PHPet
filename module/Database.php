@@ -71,7 +71,31 @@ class Database
         return $this->usuario = $this->logar->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function executar($query,$binds = []){ 
+        try{
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute($binds);
+            return $stmt;
+        }catch (PDOException $err) {
+            die("Connection Failed " . $err->getMessage());
+        }
+    }
 
+    public function update($where, $values){
+        $this->table = "usuarios";
+        $fields = array_keys($values);
+
+        $query = 'UPDATE ' . $this->table .' SET ' .implode('=?,',$fields). '=? WHERE ' . $where;
+        
+        $result = $this->executar($query,array_values($values));
+        
+        if($result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 
 ?>

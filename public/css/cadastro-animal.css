@@ -96,11 +96,11 @@ p{
     z-index: -2;
 }
 
-@keyframes girar{
+/* @keyframes girar{
     from{
         transform: rotate(0deg);
     }
     to{
         transform: rotate(360deg);
     }
-}
+} */
