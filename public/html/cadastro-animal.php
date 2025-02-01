@@ -36,6 +36,7 @@ if (isset($_POST['cadastrar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cadastro-animal.css">
+    <script defer src="../js/cadastrar-animal.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -51,7 +52,7 @@ if (isset($_POST['cadastrar'])){
         <input type="text" name="raca" placeholder="Raça:" required>
         <input type="text" name="idade" placeholder="Idade:" required>
 
-        <input class="botao-submit" type="submit" name="cadastrar">
+        <input class="botao-submit" type="submit" name="cadastrar" value="cadastrar">
     </form>
 </body>
 </html>

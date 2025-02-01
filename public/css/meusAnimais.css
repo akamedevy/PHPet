@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbfbfb;
+}
+
+.voltar{
+    top: 1rem;
+    left: 1rem;
+    position: absolute;
+}
+
+.voltar i{
+    transition: 0.25s ease;
+    color: black;
+    font-size: 2.75rem;
+}
+
+.voltar i:hover{
+    transform: scale(101%);
+    color: rebeccapurple;
+    font-size: 3rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 0 30px rgba(128, 0, 128, 0.1);
+    border-radius: 10px;
+    background-color: white;
+    z-index: 2;
+    height: 80%;
+    width: 70%;
+    padding: 1rem;
+}
+
+.container .card {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.1);
+    margin-top: 2rem;
+    width: 95%;
+    height: 100px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(128, 0, 128, 0.2);
+}
+
+.container .card h1 {
+    position: absolute;
+    font-size: 1.5rem;
+    left: 5rem;
+    top: 1.5rem;
+    color: rebeccapurple;
+}
+
+.container .card p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.container .card .animal-raca {
+    position: absolute;
+    left: 5rem;
+    top: 3.5rem;
+    color: #555;
+}
+
+.container .card .animal-idade {
+    position: absolute;
+    left: 11rem;
+    top: 3.5rem;
+    color: #555;
+}
+
+.container .card .animal-idade span {
+    color: rebeccapurple;
+}
+
+.container .card .animal-especie {
+    position: absolute;
+    left: 16.5rem;
+    top: 3.5rem;
+    color: #555;
+}
+
+.fa-paw {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    font-size: 3rem;
+    color: rebeccapurple;
+}
+
+.fa-xmark {
+    right: 1rem;
+    top: 2rem;
+    font-size: 2rem;
+    position: absolute;
+    color: rebeccapurple;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.fa-xmark:hover {
+    color: #8a2be2;
+}
+
+.fa-pencil {
+    right: 4.5rem;
+    top: 2.3rem;
+    font-size: 1.5rem;
+    position: absolute;
+    color: rebeccapurple;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.fa-pencil:hover {
+    color: #8a2be2;
+}
+
+/*  */
+
+.hidden {
+    display: none;
+  }
+  
+.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#editar-animal{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(117, 117, 117, 0.5);
+    position: absolute;
+    z-index: 10;
+}
+
+.editar {
+    height: 550px;
+    width: 400px;
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    padding: 20px; /* Espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editar-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+
+.editar-form select, .editar-form input {
+    height: 3rem;
+    width: 100% !important;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editar-form select{
+    width: 105% !important;
+}
+
+.editar-form select:focus, .editar-form input:focus {
+    border-color: rebeccapurple;
+    box-shadow: 0 0 5px rgba(102, 51, 153, 0.5);
+    outline: none;
+}
+
+.editar-form .botao-submit {
+    height: 3rem;
+    width: 100%;
+    background-color: rebeccapurple;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.editar-form .botao-submit:hover {
+    background-color: #8a2be2;
+    transform: translateY(-2px);
+}
+
+.editar-form .botao-submit:active {
+    transform: translateY(0);
+}
+
+.close-btn{
+    top: 0;
+    position: absolute;
+    right: 2rem;
+    z-index: 200 !important;
+}
+
+.close-btn .fechar-form{
+    color: white !important;
+    font-size: 4rem !important;
+}

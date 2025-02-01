@@ -29,7 +29,7 @@ session_start();
             <h1> agendar consulta </h1>
         </div>
         </a>
-        <a href="">
+        <a href="meusAnimais.php">
         <div class="choice2 card">
             <h1>meus animais</h1>
         </div>

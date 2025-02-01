@@ -34,6 +34,9 @@ p{
 }
 
 .form-animais{
+    transform: scale(50%);
+    opacity: 0;
+    /* ^^^^ animação js */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -43,6 +46,7 @@ p{
     /* background-color: ; */
     border: 2px solid #BDC3C7;
     border-radius: 5%;
+    transition: 1s ease;
 }
 
 .form-animais input{
@@ -74,24 +78,28 @@ p{
 }
 
 .blob-background{
+    opacity: 0;
+    transition: 1.5s ease;
     position: absolute;
     user-select: none;
     left: 0;
     top: 0;
     height: 600px;
     width: 600px;
-    transform: translate(-30%, -40%);
+    transform: translate(-40%, -40%);
     z-index: -2;
 }
 
 .blob-background2{
+    opacity: 0;
+    transition: 1.7s ease;
     position: absolute;
     user-select: none;
     right: 0;
     bottom: 0;
     height: 600px;
     width: 600px;
-    transform: translate(30%, 40%);
+    transform: translate(40%, 40%);
     animation: girar 5s ease infinite;
     z-index: -2;
 }

@@ -1,8 +1,6 @@
 <?php
 
 include "../../module/Database.php";
-// session_start();
-// var_dump($_SESSION);
 
 $db = new Database();
 
