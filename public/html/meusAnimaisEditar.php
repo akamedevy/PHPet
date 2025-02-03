@@ -66,9 +66,9 @@ $editar_dados = $editar_dados[0];
             <i class="fa-solid fa-paw"></i>
             <h1 class="animal-nome">' . ucfirst($animal["nome"]) . '</h1>
                 <div class="informacoes">
-                    <p class="animal-raca">' . ucfirst($animal["raca"]) . '</p>
+                <p class="animal-especie">' . ucfirst($animal['especie']) . '</p>
+                <p class="animal-raca">' . ucfirst($animal["raca"]) . '</p>
                     <p class="animal-idade">Idade: <span>' . $animal['idade'] . '</span></p>
-                    <p class="animal-especie">' . ucfirst($animal['especie']) . '</p>
                 </div>
             <a href="meusAnimaisEditar.php?id_animal=' . $animal['id'] . '" class="edit-btn"><i class="fa-solid fa-pencil"></i></a>
             <a href="#"><i class="fa-solid fa-xmark"></i></a>

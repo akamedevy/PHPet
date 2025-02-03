@@ -30,6 +30,7 @@ body {
     padding: 1rem;
     overflow-y: auto;
     position: relative;
+    overflow-x: hidden;
 }
 
 .container a{
@@ -126,6 +127,7 @@ body {
     left: 74.5%;
     top: 1.5rem;
     color: rebeccapurple;
+    width: 50%;
 }
 
 .container .card .doctor-type{

@@ -10,40 +10,32 @@ session_start();
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu Principal</title>
     <link rel="stylesheet" href="../css/homeUsuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="text">
-            <h1><?php echo($_SESSION['nome_formatado']) ?>, escolha sua <span>operação</span></h1>
+        <h1 class="text">Bem-vindo ao <span>PHPET</span></h1>
+        <div class="cards">
+            <a href="agendarConsulta.php" class="card">
+                <i class="fas fa-calendar-plus"></i>
+                <h1>Agendar Consulta</h1>
+            </a>
+            <a href="meusAnimais.php" class="card">
+                <i class="fas fa-paw"></i>
+                <h1>Meus Animais</h1>
+            </a>
+            <a href="minhasConsultas.php" class="card">
+                <i class="fas fa-notes-medical"></i>
+                <h1>Minhas Consultas</h1>
+            </a>
         </div>
-        <a href="agendarConsulta.php">
-        <div class="choice1 card">
-            <h1> agendar consulta </h1>
-        </div>
-        </a>
-        <a href="meusAnimais.php">
-        <div class="choice2 card">
-            <h1>meus animais</h1>
-        </div>
-        </a>
-        <a href="minhasConsultas.php">
-        <div class="choice3 card">
-            <h1>minhas consultas</h1>
-        </div>
-        </a>
     </div>
-
-    <!-- <form method="POST">
-        <input type="date" name="data" id="">
-        <input type="submit" name="enviar">
-    </form> -->
 </body>
 </html>

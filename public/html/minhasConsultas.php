@@ -43,7 +43,7 @@ foreach ($veterinarios as $veterinario) {
         <?php
             if (!$consultas_dados)
             {
-                echo "não há consultas";
+                echo "Não há consultas";
             }
         
             foreach ($consultas_dados as $consulta) {
@@ -58,17 +58,19 @@ foreach ($veterinarios as $veterinario) {
                     $veterinario = $veterinarios_assoc[$consulta['id_veterinario']] ?? null;
 
                     if ($veterinario) {
+                        $data = new DateTime($consulta['dia']);
+                        $consulta['dia'] = date_format($data, "d/m/Y");
                         echo '
-                        <a href="">
+                        <a href="minhasConsultasDados.php?id_consulta=' . $consulta['id'] . '">
                             <div class="card">
                                 <i class="fa-solid fa-notes-medical"></i>
-                                <h1 class="card-title">' . $animal['nome'] . '</h1>
-                                <p class="card-p">' . $consulta['motivo'] . '</p>
+                                <h1 class="card-title">' . ucwords($animal['nome']) . '</h1>
+                                <p class="card-p">' . ucwords($consulta['tipo']) . '</p>
                                 <i class="fa-solid fa-clock"></i>
                                 <h1 class="card-data">' . $consulta['dia'] . '</h1>
                                 <p class="card-time">' . $consulta['horario'] . '</p>
                                 <i class="fa-solid fa-user-doctor"></i>
-                                <h1 class="doctor-name">' . $veterinario['nome'] . '</h1>
+                                <h1 class="doctor-name">' . ucwords($veterinario['nome']) . '</h1>
                                 <p class="doctor-type">Veterinario</p>
                             </div>
                         </a>

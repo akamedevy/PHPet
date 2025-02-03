@@ -27,7 +27,7 @@ if(isset($_POST['atualizar']))
 
     if ($atualizar){
         echo '<script> alert("Usuario editado com sucesso") </script>';
-        echo "<meta http-equiv='refresh' content='0.5;url=admEditarUsuario.php?id_cliente=" . $id_cliente . "' />";
+        echo "<meta http-equiv='refresh' content='0.5;url=admUsuarios.php'>";
     }
 
 }

@@ -49,15 +49,20 @@ if (isset($_POST['cadastrar']))
     <div class="container">
         <i id="create-btn" class="fa-solid fa-plus create-btn"></i>
         <?php
+            if(!$animais_dados)
+            {
+                echo("Não há animais");
+            }
+
             foreach ($animais_dados as $animal)
             {
             echo '<div class="card">
             <i class="fa-solid fa-paw"></i>
             <h1 class="animal-nome">' . ucfirst($animal["nome"]) . '</h1>
                 <div class="informacoes">
-                    <p class="animal-raca">' . ucfirst($animal["raca"]) . '</p>
+                <p class="animal-especie">' . ucfirst($animal['especie']) . '</p>
+                <p class="animal-raca">' . ucfirst($animal["raca"]) . '</p>
                     <p class="animal-idade">Idade: <span>' . $animal['idade'] . '</span></p>
-                    <p class="animal-especie">' . ucfirst($animal['especie']) . '</p>
                 </div>
             <a href="meusAnimaisEditar.php?id_animal=' . $animal['id'] . '" class="edit-btn"><i class="fa-solid fa-pencil"></i></a>
             <a href="../../controller/DeletarAnimal.php?id_animal=' . $animal['id'] . '" ><i class="fa-solid fa-xmark"></i></a>

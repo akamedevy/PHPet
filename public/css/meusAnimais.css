@@ -165,10 +165,10 @@ body {
 .editar {
     height: 550px;
     width: 400px;
-    background-color: #ffffff; /* Fundo branco */
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    padding: 20px; /* Espaçamento interno */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;

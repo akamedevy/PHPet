@@ -1,0 +1,121 @@
+.information{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(117, 117, 117, 0.5);
+    z-index: 100;
+}
+
+.information span{
+    color: rebeccapurple;
+}
+
+.information-container{
+    height: 700px;
+    width: 600px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.information-container h1{
+    font-size: 1.5rem;
+    color: #222;
+}
+
+.animal-dados, .responsavel-dados, .usuario-dados{
+    position: relative;
+    display: flex;
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(128, 0, 128, 0.2);
+    border-radius: 8px;
+}
+
+/* position: relative;
+margin-top: 2rem;
+width: 95%;
+height: 100px;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+cursor: pointer; */
+
+.responsavel-dados .fa-user-doctor, .animal-dados .fa-paw, .usuario-dados .fa-user{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.5rem;
+    font-size: 3rem;
+    color: rebeccapurple;
+}
+
+.responsavel-dados .responsavel-nome, .animal-dados .animal-nome, .usuario-dados .usuario-nome{
+    font-size: 1.25rem;
+    top: 1.5rem;
+    left: 5rem;
+    position: absolute;
+    color: rebeccapurple;
+}
+
+.info-values p{
+    font-size: 1rem;
+    color: #555;
+}
+
+.info-values{
+    position: absolute;
+    left: 5rem;
+    top: 3.5rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    height: 40px;
+}
+
+.info-detalhes{
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(128, 0, 128, 0.2);
+    border-radius: 8px;
+}
+
+.info-detalhes p{
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.detalhe-motivo{
+    font-size: 1.3rem;
+    line-break: anywhere;
+}
+
+.close-btn{
+    top: 0;
+    position: absolute;
+    right: 2rem;
+    z-index: 200 !important;
+}
+
+.fa-xmark {
+    font-size: 4rem;
+    right: 1rem;
+    top: 2rem;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}

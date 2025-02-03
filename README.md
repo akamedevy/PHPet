@@ -1,2 +1,2 @@
 # PHPet
-sistema de uma clinica veterinaria em desenvolvimento
+sistema de uma clinica veterinaria (CRUD)
