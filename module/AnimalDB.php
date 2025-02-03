@@ -1,6 +1,6 @@
 <?php
 
-include "Database.php";
+include_once "Database.php";
 
 class AnimalDB extends Database{
     public function __construct()

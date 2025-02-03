@@ -46,6 +46,18 @@ body {
     height: 80%;
     width: 70%;
     padding: 1rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+.fa-plus{
+    top: 0.7rem;
+    position: absolute;
+    right: 3.5rem;
+    font-size: 2rem;
+    color: rebeccapurple;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .container .card {
@@ -78,16 +90,10 @@ body {
 }
 
 .container .card .animal-raca {
-    position: absolute;
-    left: 5rem;
-    top: 3.5rem;
     color: #555;
 }
 
 .container .card .animal-idade {
-    position: absolute;
-    left: 11rem;
-    top: 3.5rem;
     color: #555;
 }
 
@@ -96,15 +102,13 @@ body {
 }
 
 .container .card .animal-especie {
-    position: absolute;
-    left: 16.5rem;
-    top: 3.5rem;
     color: #555;
 }
 
 .fa-paw {
     position: absolute;
-    top: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
     left: 1rem;
     font-size: 3rem;
     color: rebeccapurple;
@@ -120,7 +124,7 @@ body {
     transition: color 0.2s ease;
 }
 
-.fa-xmark:hover {
+.fa-xmark:hover, .fa-plus:hover {
     color: #8a2be2;
 }
 
@@ -179,6 +183,10 @@ body {
     width: 100%;
 }
 
+.editar-form label{
+    color: #555 !important;
+}
+
 
 .editar-form select, .editar-form input {
     height: 3rem;
@@ -234,4 +242,14 @@ body {
 .close-btn .fechar-form{
     color: white !important;
     font-size: 4rem !important;
+}
+
+.informacoes{
+    width: auto;
+    gap: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 5rem;
+    top: 3.5rem;
 }

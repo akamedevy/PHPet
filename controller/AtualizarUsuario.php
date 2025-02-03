@@ -13,7 +13,7 @@ class AtualizarUsuario{
         $this->senha = $senha;
         $this->tipo_usuario = $tipo_usuario;
 
-        return (new Database)->update('id = '. $this->id, [
+        return (new Database)->update("usuarios",'id = '. $this->id, [
             'nome' => $this->nome,
             'cpf' => $this->cpf,
             'email' => $this->email,
@@ -23,7 +23,5 @@ class AtualizarUsuario{
     }
 
 }
-
-
 
 ?>

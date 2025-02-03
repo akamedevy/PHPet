@@ -81,8 +81,8 @@ class Database
         }
     }
 
-    public function update($where, $values){
-        $this->table = "usuarios";
+    public function update($tabela,$where, $values){
+        $this->table = $tabela;
         $fields = array_keys($values);
 
         $query = 'UPDATE ' . $this->table .' SET ' .implode('=?,',$fields). '=? WHERE ' . $where;
@@ -95,6 +95,14 @@ class Database
         else{
             return false;
         }
+    }
+
+    public function delete($delete_table, $delete_rule, $id)
+    {
+        $query = "DELETE FROM " . $delete_table . " WHERE " . $delete_rule . " = " . $id;
+        $this->deletar = $this->conn->prepare($query);
+        $this->deletar->execute();
+        return TRUE;
     }
 }
 

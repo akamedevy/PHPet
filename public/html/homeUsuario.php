@@ -34,7 +34,7 @@ session_start();
             <h1>meus animais</h1>
         </div>
         </a>
-        <a href="">
+        <a href="minhasConsultas.php">
         <div class="choice3 card">
             <h1>minhas consultas</h1>
         </div>
